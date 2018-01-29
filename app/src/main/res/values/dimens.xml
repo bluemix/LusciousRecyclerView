@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_card_width">250dp</dimen>
+    <dimen name="item_card_height">350dp</dimen>
+
+    <dimen name="small_space">3dp</dimen>
+    <dimen name="medium_space">5dp</dimen>
+    <dimen name="large_space">10dp</dimen>
+    <dimen name="huge_space">20dp</dimen>
+    <dimen name="very_huge_space">60dp</dimen>
+</resources>

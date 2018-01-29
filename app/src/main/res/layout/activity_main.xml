@@ -1,24 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:background="@color/primaryBackgroundColor"
     android:orientation="vertical"
+              android:layout_gravity="center"
+              android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginTop="10dp"
-        android:text="只有Cover Flow"
+
+        android:padding="@dimen/medium_space"
+        android:background="@drawable/rounded_button_back"
+        android:text="LusciousRV"
+        android:textColor="@color/primaryBackgroundColor"
         android:onClick="onJustCoverFlowClick"/>
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginTop="10dp"
-        android:text="也有View Pager"
+        android:text="View Pager"
+        android:padding="@dimen/medium_space"
+        android:textColor="@color/primaryBackgroundColor"
+        android:background="@drawable/rounded_button_back"
         android:onClick="onViewPagerClick"/>
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginTop="10dp"
-        android:text="还有Recyvler View"
+        android:padding="@dimen/medium_space"
+        android:textColor="@color/primaryBackgroundColor"
+        android:background="@drawable/rounded_button_back"
+        android:text="With Nested Recycler View"
         android:onClick="onRecyclerViewClick"/>
 </LinearLayout>

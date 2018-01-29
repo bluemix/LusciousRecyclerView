@@ -1,1 +1,1 @@
-include ':app', ':coverflow'
+include ':app', ':lusciousrv'

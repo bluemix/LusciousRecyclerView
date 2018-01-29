@@ -1,18 +1,18 @@
-# RecyclerCoverFlow
-使用RecyclerView，自定义LayoutManager实现旋转木马相册效果
-
+# LusciousRecyclerView
+RecyclerView with custom LayoutManager 
+ 
 ![image](https://github.com/ChenLittlePing/RecyclerCoverFlow/blob/master/gif/demo.gif)
 
 <p>Gradle依赖 compile 'com.chenlittleping:recyclercoverflow:1.0.5'
 
-# 使用方式
-### 1,xml中加入
+# How to
+### Define it in the XML
 ```xml
-    <recycler.coverflow.RecyclerCoverFlow
+    <recycler.lusciou.LusciousRecyclerView
             android:id="@+id/list"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-    </recycler.coverflow.RecyclerCoverFlow>
+    </recycler.lusciou.LusciousRecyclerView>
 ```
 ### 2，Activity中初始化，其中Adapter与RecyclerView的Adapter完全一致
 ```java

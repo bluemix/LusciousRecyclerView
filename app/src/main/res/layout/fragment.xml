@@ -12,7 +12,7 @@
         android:text="0"
         android:textColor="@android:color/black"/>
 
-    <recycler.coverflow.LusciousRecyclerView
+    <me.bluemix.LusciousRecyclerView
         android:id="@+id/list"
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"

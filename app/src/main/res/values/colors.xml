@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorPrimary">@color/milano_red</color>
+    <color name="colorPrimaryDark">@color/milano_red</color>
+    <color name="colorAccent">@color/accentColor</color>
+
+
+
+
+    <color name="primaryBackgroundColor">@color/corn_field</color>
+    <color name="secondaryBackgroundColor">@color/tulip_tree</color>
+    <color name="tertiaryBackgroundColor">@color/candlelight</color>
+
+    <color name="primaryTextColor">@color/milano_red</color>
+    <color name="secondaryTextColor">@color/deep_carmine_pink</color>
+    <color name="tertiaryTextColor">@color/deep_carmine_pink</color>
+
+
+    <color name="accentColor">@color/sunset_orange</color>
+
+
+
+
+    <color name="corn_field">#FFF9C1</color>
+    <color name="deep_carmine_pink">#ED2D30</color>
+    <color name="milano_red">#BB090A</color>
+    <color name="candlelight">#FFDD15</color>
+    <color name="tulip_tree">#F2AD3D</color>
+    <color name="sunset_orange">#FE5E56</color>
+
+
+    <color name="transparent">#0000</color>
+    <color name="black">#232323</color>
+    <color name="black_2">#83232323</color>
+    <color name="white">#fefefe</color>
+
 </resources>
