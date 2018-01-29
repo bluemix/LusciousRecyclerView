@@ -12,11 +12,11 @@
         android:text="0"
         android:textColor="@android:color/black" />
 
-    <recycler.coverflow.RecyclerCoverFlow
+    <recycler.coverflow.LusciousRecycler
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp">
 
-    </recycler.coverflow.RecyclerCoverFlow>
+    </recycler.coverflow.LusciousRecycler>
 </LinearLayout>

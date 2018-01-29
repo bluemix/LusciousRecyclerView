@@ -7,35 +7,40 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 
 /**
- * 继承RecyclerView重写{@link #getChildDrawingOrder(int, int)}对Item的绘制顺序进行控制
+ * Inherit RecyclerView
+ * Rewrite {@link #getChildDrawingOrder (int, int)} Control the drawing order of Item
  *
  * @author Chen Xiaoping (562818444@qq.com)
  * @version V1.0
  * @Datetime 2017-04-18
+ *
+ * @author blueMix (a.bluemix@gmail.com)
+ * @version V1.1
+ * @Datetime 2018-01-29
  */
 
-public class RecyclerCoverFlow extends RecyclerView {
+public class LusciousRecycler extends RecyclerView {
     /**
-     * 按下的X轴坐标
+     * Press the X axis coordinate
      */
     private float mDownX;
 
     /**
-     * 布局器构建者
+     * Layout Builder
      */
-    private CoverFlowLayoutManger.Builder mManagerBuilder;
+    private LusciousRecycler.Builder mManagerBuilder;
 
-    public RecyclerCoverFlow(Context context) {
+    public LusciousRecycler(Context context) {
         super(context);
         init();
     }
 
-    public RecyclerCoverFlow(Context context, @Nullable AttributeSet attrs) {
+    public LusciousRecycler(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public RecyclerCoverFlow(Context context, @Nullable AttributeSet attrs, int defStyle) {
+    public LusciousRecycler(Context context, @Nullable AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
     }
@@ -43,22 +48,22 @@ public class RecyclerCoverFlow extends RecyclerView {
     private void init() {
         createManageBuilder();
         setLayoutManager(mManagerBuilder.build());
-        setChildrenDrawingOrderEnabled(true); //开启重新排序
+        setChildrenDrawingOrderEnabled(true); //开启重新排序 (Open reordering)
         setOverScrollMode(OVER_SCROLL_NEVER);
     }
 
     /**
-     * 创建布局构建器
+     * Create a layout builder
      */
     private void createManageBuilder() {
         if (mManagerBuilder == null) {
-            mManagerBuilder = new CoverFlowLayoutManger.Builder();
+            mManagerBuilder = new LusciousRecycler.Builder();
         }
     }
 
     /**
-     * 设置是否为普通平面滚动
-     * @param isFlat true:平面滚动；false:叠加缩放滚动
+     * Whether to set the normal plane rolling
+     * @param isFlat true: flat scroll; false: overlay scaled scroll
      */
     public void setFlatFlow(boolean isFlat) {
         createManageBuilder();
@@ -67,8 +72,8 @@ public class RecyclerCoverFlow extends RecyclerView {
     }
 
     /**
-     * 设置Item灰度渐变
-     * @param greyItem true:Item灰度渐变；false:Item灰度不变
+     * Set Item gray gradient
+     * @param greyItem true: Item gray scale gradient; false: Item gray scale
      */
     public void setGreyItem(boolean greyItem) {
         createManageBuilder();
@@ -77,8 +82,8 @@ public class RecyclerCoverFlow extends RecyclerView {
     }
 
     /**
-     * 设置Item灰度渐变
-     * @param alphaItem true:Item半透渐变；false:Item透明度不变
+     * Set Item gray gradient
+     * @param alphaItem true: Item Translucent; false: Item No change in transparency
      */
     public void setAlphaItem(boolean alphaItem) {
         createManageBuilder();
@@ -87,9 +92,10 @@ public class RecyclerCoverFlow extends RecyclerView {
     }
 
     /**
-     * 设置Item的间隔比例
-     * @param intervalRatio Item间隔比例。
-     *                      即：item的宽 x intervalRatio
+     * Set Item interval ratio
+     * @param intervalRatio The item interval ratio.
+     *                      Name: item width x intervalRatio
+     *
      */
     public void setIntervalRatio(float intervalRatio) {
         createManageBuilder();
@@ -99,8 +105,8 @@ public class RecyclerCoverFlow extends RecyclerView {
 
     @Override
     public void setLayoutManager(LayoutManager layout) {
-        if (!(layout instanceof CoverFlowLayoutManger)) {
-            throw new IllegalArgumentException("The layout manager must be CoverFlowLayoutManger");
+        if (!(layout instanceof LusciousRecycler)) {
+            throw new IllegalArgumentException("The layout manager must be LusciousRecycler");
         }
         super.setLayoutManager(layout);
     }
@@ -108,7 +114,7 @@ public class RecyclerCoverFlow extends RecyclerView {
     @Override
     protected int getChildDrawingOrder(int childCount, int i) {
         int center = getCoverFlowLayout().getCenterPosition()
-                - getCoverFlowLayout().getFirstVisiblePosition(); //计算正在显示的所有Item的中间位置
+            - getCoverFlowLayout().getFirstVisiblePosition(); //计算正在显示的所有Item的中间位置
         if (center < 0) center = 0;
         else if (center > childCount) center = childCount;
         int order;
@@ -123,24 +129,24 @@ public class RecyclerCoverFlow extends RecyclerView {
     }
 
     /**
-     * 获取LayoutManger，并强制转换为CoverFlowLayoutManger
+     * Get LayoutManger, and cast to LusciousRecycler
      */
-    public CoverFlowLayoutManger getCoverFlowLayout() {
-        return ((CoverFlowLayoutManger)getLayoutManager());
+    public LusciousRecycler getCoverFlowLayout() {
+        return ((LusciousRecycler)getLayoutManager());
     }
 
     /**
-     * 获取被选中的Item位置
+     * Get the selected Item location
      */
     public int getSelectedPos() {
         return getCoverFlowLayout().getSelectedPos();
     }
 
     /**
-     * 设置选中监听
-     * @param l 监听接口
+     * Set monitor selected
+     * @param l Listening interface
      */
-    public void setOnItemSelectedListener(CoverFlowLayoutManger.OnSelected l) {
+    public void setOnItemSelectedListener(LusciousRecycler.OnSelected l) {
         getCoverFlowLayout().setOnSelectedListener(l);
     }
 
@@ -149,16 +155,17 @@ public class RecyclerCoverFlow extends RecyclerView {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 mDownX = ev.getX();
-                getParent().requestDisallowInterceptTouchEvent(true); //设置父类不拦截滑动事件
+                // Set parent class does not intercept sliding events
+                getParent().requestDisallowInterceptTouchEvent(true);
                 break;
             case MotionEvent.ACTION_MOVE:
                 if ((ev.getX() > mDownX && getCoverFlowLayout().getCenterPosition() == 0) ||
-                        (ev.getX() < mDownX && getCoverFlowLayout().getCenterPosition() ==
-                                getCoverFlowLayout().getItemCount() -1)) {
-                    //如果是滑动到了最前和最后，开放父类滑动事件拦截
+                    (ev.getX() < mDownX && getCoverFlowLayout().getCenterPosition() ==
+                        getCoverFlowLayout().getItemCount() -1)) {
+                    // If it is sliding to the front and the end, open the parent sliding event to intercept
                     getParent().requestDisallowInterceptTouchEvent(false);
                 } else {
-                    //滑动到中间，设置父类不拦截滑动事件
+                    // Swipe to the middle to set the parent class to not block the swipe event
                     getParent().requestDisallowInterceptTouchEvent(true);
                 }
                 break;

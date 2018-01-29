@@ -11,8 +11,7 @@ import android.widget.TextView;
 import com.recycler.coverflow.Adapter;
 import com.recycler.coverflow.R;
 
-import recycler.coverflow.CoverFlowLayoutManger;
-import recycler.coverflow.RecyclerCoverFlow;
+import recycler.coverflow.LusciousRecycler;
 
 /**
  *
@@ -23,7 +22,7 @@ import recycler.coverflow.RecyclerCoverFlow;
  */
 
 public class MyFragment extends Fragment {
-    private RecyclerCoverFlow mList;
+    private LusciousRecycler mList;
     private TextView mIndex;
 
 
@@ -41,13 +40,13 @@ public class MyFragment extends Fragment {
     }
 
     private void initList(View rootView) {
-        mList = (RecyclerCoverFlow) rootView.findViewById(R.id.list);
+        mList = (LusciousRecycler) rootView.findViewById(R.id.list);
         mIndex = ((TextView)rootView.findViewById(R.id.index));
 //        mList.setFlatFlow(true); //平面滚动
         mList.setGreyItem(true); //设置灰度渐变
 //        mList.setAlphaItem(true); //设置半透渐变
         mList.setAdapter(new Adapter(getActivity()));
-        mList.setOnItemSelectedListener(new CoverFlowLayoutManger.OnSelected() {
+        mList.setOnItemSelectedListener(new LusciousRecycler.OnSelected() {
             @Override
             public void onItemSelected(int position) {
                 mIndex.setText((position+1)+"/"+mList.getLayoutManager().getItemCount());

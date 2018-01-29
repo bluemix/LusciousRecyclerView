@@ -33,10 +33,10 @@ import android.view.animation.DecelerateInterpolator
  * @Datetime 2018-01-29
  */
 
-class CoverFlowLayoutManger(isFlat: Boolean, isGreyItem: Boolean,
-                            isAlphaItem: Boolean, cstInterval: Float) : RecyclerView.LayoutManager() {
+class LusciousRecycler(isFlat: Boolean, isGreyItem: Boolean,
+                       isAlphaItem: Boolean, cstInterval: Float) : RecyclerView.LayoutManager() {
 
-  private val TAG = CoverFlowLayoutManger::class.java.simpleName
+  private val TAG = LusciousRecycler::class.java.simpleName
 
 
   /**
@@ -191,7 +191,7 @@ class CoverFlowLayoutManger(isFlat: Boolean, isGreyItem: Boolean,
   /**
    * Get the middle position
    *
-   * Note: This method is mainly used for [(int, int)][RecyclerCoverFlow.getChildDrawingOrder]
+   * Note: This method is mainly used for [(int, int)][LusciousRecycler.getChildDrawingOrder]
    * to determine the middle position
    *
    *  Call [()][.getSelectedPos] if you need to get the selected Item position)
@@ -638,8 +638,8 @@ class CoverFlowLayoutManger(isFlat: Boolean, isGreyItem: Boolean,
       return this
     }
 
-    fun build(): CoverFlowLayoutManger {
-      return CoverFlowLayoutManger(isFlat, isGreyItem,
+    fun build(): LusciousRecycler {
+      return LusciousRecycler(isFlat, isGreyItem,
           isAlphaItem, cstIntervalRatio)
     }
   }
