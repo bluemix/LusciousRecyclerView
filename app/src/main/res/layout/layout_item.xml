@@ -41,7 +41,7 @@
             android:layout_above="@+id/shadow_layer"
             android:layout_toEndOf="@+id/rightDummyView"
             android:scaleType="centerCrop"
-            android:src="@mipmap/item1"/>
+            android:src="@drawable/cake1"/>
 
         <ImageView
             android:id="@+id/shadow_layer"
@@ -54,6 +54,7 @@
 
 
         <Button
+            android:visibility="gone"
             android:id="@+id/sweetName"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
@@ -73,6 +74,7 @@
             />
         <Button
             android:id="@+id/price"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_marginStart="@dimen/large_space"

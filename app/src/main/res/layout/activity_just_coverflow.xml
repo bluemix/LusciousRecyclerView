@@ -12,7 +12,7 @@
         android:layout_marginTop="20dp"
         android:text="0"
         android:textAlignment="center"
-        android:textColor="@android:color/black"/>
+        android:textColor="@color/primaryTextColor"/>
 
     <me.bluemix.LusciousRecyclerView
         android:id="@+id/list"

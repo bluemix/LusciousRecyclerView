@@ -8,13 +8,13 @@
 
 
 
-    <color name="primaryBackgroundColor">@color/corn_field</color>
-    <color name="secondaryBackgroundColor">@color/tulip_tree</color>
-    <color name="tertiaryBackgroundColor">@color/candlelight</color>
+    <color name="primaryBackgroundColor">@color/milano_red</color>
+    <color name="secondaryBackgroundColor">@color/deep_carmine_pink</color>
+    <color name="tertiaryBackgroundColor">@color/deep_carmine_pink</color>
 
-    <color name="primaryTextColor">@color/milano_red</color>
-    <color name="secondaryTextColor">@color/deep_carmine_pink</color>
-    <color name="tertiaryTextColor">@color/deep_carmine_pink</color>
+    <color name="primaryTextColor">@color/corn_field</color>
+    <color name="secondaryTextColor">@color/tulip_tree</color>
+    <color name="tertiaryTextColor">@color/candlelight</color>
 
 
     <color name="accentColor">@color/sunset_orange</color>

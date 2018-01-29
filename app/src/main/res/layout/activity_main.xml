@@ -3,35 +3,27 @@
               android:background="@color/primaryBackgroundColor"
     android:orientation="vertical"
               android:layout_gravity="center"
-              android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-
-        android:padding="@dimen/medium_space"
-        android:background="@drawable/rounded_button_back"
-        android:text="LusciousRV"
-        android:textColor="@color/primaryBackgroundColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/secondaryBackgroundColor"
+        android:text="LusciousRecyclerView"
+        android:textColor="@color/primaryTextColor"
         android:onClick="onJustCoverFlowClick"/>
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="View Pager"
-        android:padding="@dimen/medium_space"
-        android:textColor="@color/primaryBackgroundColor"
-        android:background="@drawable/rounded_button_back"
+        android:backgroundTint="@color/secondaryBackgroundColor"
+        android:textColor="@color/primaryTextColor"
         android:onClick="onViewPagerClick"/>
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:padding="@dimen/medium_space"
-        android:textColor="@color/primaryBackgroundColor"
-        android:background="@drawable/rounded_button_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primaryTextColor"
+        android:backgroundTint="@color/secondaryBackgroundColor"
         android:text="With Nested Recycler View"
         android:onClick="onRecyclerViewClick"/>
 </LinearLayout>
