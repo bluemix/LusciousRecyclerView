@@ -39,7 +39,7 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
-/** 以下开始是将Android Library上传到jcenter的相关配置**/
+/ ** The following is the Android Library upload to jcenter related configuration ** /
 
 apply plugin: 'maven'
 //apply plugin: 'com.novoda.bintray-release'

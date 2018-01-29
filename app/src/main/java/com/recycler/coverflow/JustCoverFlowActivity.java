@@ -4,11 +4,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import recycler.coverflow.LusciousRecycler;
+import recycler.coverflow.LusciousLayoutManger;
+import recycler.coverflow.LusciousRecyclerView;
 
 public class JustCoverFlowActivity extends AppCompatActivity {
 
-    private LusciousRecycler mList;
+    private LusciousRecyclerView mList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,12 +19,12 @@ public class JustCoverFlowActivity extends AppCompatActivity {
     }
 
     private void initList() {
-        mList = (LusciousRecycler) findViewById(R.id.list);
+        mList = (LusciousRecyclerView) findViewById(R.id.list);
 //        mList.setFlatFlow(true); //平面滚动
 //        mList.setGreyItem(true); //设置灰度渐变
 //        mList.setAlphaItem(true); //设置半透渐变
         mList.setAdapter(new Adapter(this));
-        mList.setOnItemSelectedListener(new LusciousRecycler.OnSelected() {
+        mList.setOnItemSelectedListener(new LusciousLayoutManger.OnSelected() {
             @Override
             public void onItemSelected(int position) {
                 ((TextView)findViewById(R.id.index)).setText((position+1)+"/"+mList.getLayoutManager().getItemCount());

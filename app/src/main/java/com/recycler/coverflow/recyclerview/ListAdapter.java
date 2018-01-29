@@ -9,7 +9,8 @@ import android.widget.TextView;
 import com.recycler.coverflow.Adapter;
 import com.recycler.coverflow.R;
 
-import recycler.coverflow.LusciousRecycler;
+import recycler.coverflow.LusciousLayoutManger;
+import recycler.coverflow.LusciousRecyclerView;
 
 /**
  * FIXME
@@ -55,7 +56,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     private void intiCoverFlow(final ViewHolder holder) {
         holder.coverFlow.setAdapter(new Adapter(holder.itemView.getContext()));
-        holder.coverFlow.setOnItemSelectedListener(new LusciousRecycler.OnSelected() {
+        holder.coverFlow.setOnItemSelectedListener(new LusciousLayoutManger.OnSelected() {
             @Override
             public void onItemSelected(int position) {
                 mCoverFlowPosition = position;
@@ -82,12 +83,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView text;
-        LusciousRecycler coverFlow;
+        LusciousRecyclerView coverFlow;
 
         public ViewHolder(View itemView) {
             super(itemView);
             text = (TextView) itemView.findViewById(R.id.text);
-            coverFlow = (LusciousRecycler) itemView.findViewById(R.id.cover_flow);
+            coverFlow = (LusciousRecyclerView) itemView.findViewById(R.id.cover_flow);
         }
     }
 }

@@ -19,7 +19,7 @@ import android.view.MotionEvent;
  * @Datetime 2018-01-29
  */
 
-public class LusciousRecycler extends RecyclerView {
+public class LusciousRecyclerView extends RecyclerView {
     /**
      * Press the X axis coordinate
      */
@@ -28,19 +28,19 @@ public class LusciousRecycler extends RecyclerView {
     /**
      * Layout Builder
      */
-    private LusciousRecycler.Builder mManagerBuilder;
+    private LusciousLayoutManger.Builder mManagerBuilder;
 
-    public LusciousRecycler(Context context) {
+    public LusciousRecyclerView(Context context) {
         super(context);
         init();
     }
 
-    public LusciousRecycler(Context context, @Nullable AttributeSet attrs) {
+    public LusciousRecyclerView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public LusciousRecycler(Context context, @Nullable AttributeSet attrs, int defStyle) {
+    public LusciousRecyclerView(Context context, @Nullable AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init();
     }
@@ -57,7 +57,7 @@ public class LusciousRecycler extends RecyclerView {
      */
     private void createManageBuilder() {
         if (mManagerBuilder == null) {
-            mManagerBuilder = new LusciousRecycler.Builder();
+            mManagerBuilder = new LusciousLayoutManger.Builder();
         }
     }
 
@@ -105,8 +105,8 @@ public class LusciousRecycler extends RecyclerView {
 
     @Override
     public void setLayoutManager(LayoutManager layout) {
-        if (!(layout instanceof LusciousRecycler)) {
-            throw new IllegalArgumentException("The layout manager must be LusciousRecycler");
+        if (!(layout instanceof LusciousLayoutManger)) {
+            throw new IllegalArgumentException("The layout manager must be LusciousLayoutManger");
         }
         super.setLayoutManager(layout);
     }
@@ -129,10 +129,10 @@ public class LusciousRecycler extends RecyclerView {
     }
 
     /**
-     * Get LayoutManger, and cast to LusciousRecycler
+     * Get LayoutManger, and cast to LusciousLayoutManger
      */
-    public LusciousRecycler getCoverFlowLayout() {
-        return ((LusciousRecycler)getLayoutManager());
+    public LusciousLayoutManger getCoverFlowLayout() {
+        return ((LusciousLayoutManger)getLayoutManager());
     }
 
     /**
@@ -146,7 +146,7 @@ public class LusciousRecycler extends RecyclerView {
      * Set monitor selected
      * @param l Listening interface
      */
-    public void setOnItemSelectedListener(LusciousRecycler.OnSelected l) {
+    public void setOnItemSelectedListener(LusciousLayoutManger.OnSelected l) {
         getCoverFlowLayout().setOnSelectedListener(l);
     }
 
