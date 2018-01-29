@@ -23,7 +23,7 @@ RecyclerView with custom LayoutManager
         
  
 ## Usage
-### 1) Define it in the XML
+-  Define it in the XML
 ```xml
     <me.bluemix.LusciousRecyclerView
             android:id="@+id/list"
@@ -31,7 +31,7 @@ RecyclerView with custom LayoutManager
             android:layout_height="match_parent">
     </me.bluemix.LusciousRecyclerView>
 ```
-### 2) Activity initialization, Adapter and RecyclerView Adapter are exactly the same
+- Activity initialization, Adapter and RecyclerView Adapter are exactly the same
 ```kotlin
     mList = findViewById<LusciousRecyclerView>(R.id.lusciousRV)
     //        mList.setFlatFlow(true); // flat scrolling
@@ -43,5 +43,5 @@ RecyclerView with custom LayoutManager
     })
 ```
 
-
+<br><br>
 and that's it :)
